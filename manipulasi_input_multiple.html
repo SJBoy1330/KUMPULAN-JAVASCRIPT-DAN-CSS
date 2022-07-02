@@ -11,6 +11,12 @@
         .d-none {
             display: none;
         }
+
+        #parent {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
     </style>
 </head>
 
@@ -20,7 +26,7 @@
         <div id="inputan_1">
             <input type="text" placeholder="Isi ya jangan lupa">
             <button onclick="hapus(1)">HAPUS</button>
-        </div><br>
+        </div>
     </div>
     <button type="button" onclick="menambah_inputan()">ADD COLUMN</button>
 
@@ -35,10 +41,10 @@
             $('#parent').append('<div id="inputan_' + jmlh + '">\
                 <input type="text" placeholder="Isi ya jangan lupa">\
                 <button onclick="hapus('+ jmlh + ')">HAPUS</button>\
-        </div><br>')
+        </div>')
         }
         function hapus(id) {
-            $('#inputan_' + id).fadeOut();
+            $('#inputan_' + id).remove();
         }
     </script>
 </body>
