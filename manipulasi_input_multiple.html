@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTOH JS CHECKBOX</title>
+
+    <style>
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ONCHANGE GANTI = FUNGSI JS -->
+    <div id="parent">
+        <div id="inputan_1">
+            <input type="text" placeholder="Isi ya jangan lupa">
+            <button onclick="hapus(1)">HAPUS</button>
+        </div><br>
+    </div>
+    <button type="button" onclick="menambah_inputan()">ADD COLUMN</button>
+
+
+    <!-- JANGAN LUPA IMPORT JQUERY DULU -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        function menambah_inputan() {
+            //menghitung jumlah inputan
+            var jumlah_anak = $("#parent").find("div").length;
+            var jmlh = jumlah_anak + 1;
+            $('#parent').append('<div id="inputan_' + jmlh + '">\
+                <input type="text" placeholder="Isi ya jangan lupa">\
+                <button onclick="hapus('+ jmlh + ')">HAPUS</button>\
+        </div><br>')
+        }
+        function hapus(id) {
+            $('#inputan_' + id).fadeOut();
+        }
+    </script>
+</body>
+
+</html>
